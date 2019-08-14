@@ -39,3 +39,26 @@
 | e.pageY | 返回鼠标相对于文档页面的Y坐标 IE9+支持 |
 | e.screenX | 返回鼠标相对于电脑屏幕的Ⅹ坐标 |
 | e.screenY | 返回鼠标相对于电脑屏幕的Y坐标 |
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <script>
+        var search=document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            if(e.keyCode===83){
+                search.focus()
+            }
+        })
+    </script>
+</body>
+</html>
+```
