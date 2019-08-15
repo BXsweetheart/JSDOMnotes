@@ -287,3 +287,8 @@
 </body>
 </html>
 ```
+| location对象方法| 返回值| 
+| ------ | ------ |
+| location. assign()| 跟href一样,可以跳转页面(也称为重定向页面)| 
+| location. replace()| 替换当前页面,因为不记录历史,所以不能后退页面| 
+| location. reload()| 重新加载页面,相当于刷新按钮或者f5如果参数为true强制刷新ctr|+f5| 
