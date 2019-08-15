@@ -292,3 +292,12 @@
 | back()| 可以后退功能| 
 | forward()| 前进功能| 
 | go(参数| 前进后退功能参数如果是1前进1个页面如果是-1后退1个页面| 
+
+
+| offset系列属性| 作用 | 
+| ------ | ------ |
+| element. offsetParent | 返回作为该元素带有定位的父级元素如果父级都没有定位则返回body | 
+| element. offsetlop | 返回元素相对带有定位父元素上方的偏移 | 
+| element. offsetLeft | 返回元素相对带有定位父元素左边框的偏移 | 
+| element, offsetwidth | 返回自身包括 padding、边框、内容区的宽度,返回数值不带单位 | 
+| element. offsetHeight | 返回自身包括 padding、边框、内容区的高度,返回数值不带单位 | 
