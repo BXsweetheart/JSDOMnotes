@@ -264,25 +264,19 @@
     <script>
         var btn=document.querySelector('button');
         var div=document.querySelector('div');
-       
-        var timer=5
-        btn.addEventListener('click',function(){
+       btn.addEventListener('click',function(){
             // location.href='http://www.baidu.com'
-            countdown()
-            function countdown(){
-                setInterval(() => {
-                    if(timer==0){
-                        location.href='http://www.baidu.com'
-                    }else{
-                        div.innerHTML='你将在'+timer+'秒钟后跳转到首页';
-                        timer--;
-                    }
-                    
-                }, 1000);
-            }
+            var timer=5
+            setInterval(() => {
+                if(timer==0){
+                    location.href='http://www.baidu.com'
+                }else{
+                    div.innerHTML='你将在'+timer+'秒钟后跳转到首页';
+                    timer--;
+                }
+                
+            }, 1000);
         });
-    
-     
     </script>
 </body>
 </html>
@@ -291,4 +285,4 @@
 | ------ | ------ |
 | location. assign()| 跟href一样,可以跳转页面(也称为重定向页面)| 
 | location. replace()| 替换当前页面,因为不记录历史,所以不能后退页面| 
-| location. reload()| 重新加载页面,相当于刷新按钮或者f5如果参数为true强制刷新ctr|+f5| 
+| location. reload()| 重新加载页面,相当于刷新按钮或者f5如果参数为true强制刷新ctrl+f5| 
