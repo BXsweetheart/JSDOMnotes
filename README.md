@@ -248,3 +248,42 @@
 | location. pathname| 返回路径| 
 | location, search| 返回参数| 
 | location. hash| 返回片段#后面内容常见于链接锚点| 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <div></div>
+    <script>
+        var btn=document.querySelector('button');
+        var div=document.querySelector('div');
+       
+        var timer=5
+        btn.addEventListener('click',function(){
+            // location.href='http://www.baidu.com'
+            countdown()
+            function countdown(){
+                setInterval(() => {
+                    if(timer==0){
+                        location.href='http://www.baidu.com'
+                    }else{
+                        div.innerHTML='你将在'+timer+'秒钟后跳转到首页';
+                        timer--;
+                    }
+                    
+                }, 1000);
+            }
+        });
+    
+     
+    </script>
+</body>
+</html>
+```
