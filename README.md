@@ -198,3 +198,36 @@
 </body>
 </html>
 ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"><button>Sent</button>
+    <script>
+        var btn=document.querySelector('button')
+        var time=3
+        btn.addEventListener('click',function(){
+            btn.disabled=true;
+           
+          var timer=  setInterval(() => {
+                if(time==0){
+                    clearInterval(timer);
+                    btn.disabled=false;
+                    btn.innerHTML='发送';
+                    time=3
+                }   else{
+                    btn.innerHTML='还剩下'+time+'秒';
+                    time--;       
+                }    
+            }, 1000);
+        })
+    </script>
+</body>
+</html>
+```
