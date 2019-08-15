@@ -135,3 +135,66 @@
 </body>
 </html>
 ```
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div{
+            margin: 100px 100px;
+            display: flex;
+            flex-direction: row;
+        }
+        span{
+            display: block;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 40px;
+            margin: auto 5px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+    </div>
+    <script>
+        var hour=document.querySelector('.hour');//小时
+        var minute=document.querySelector('.minute');//分钟
+        var second=document.querySelector('.second');//秒
+        // var inputTime= +new Date('2019-8-15 24:00:00');//用户输入事件的总毫秒数
+         var inputTime = new Date( new Date(new Date().toLocaleDateString()).getTime() +24 * 60 * 60 * 1000 )   //当天24：00
+        countDown();
+        setInterval(countDown,1000);
+        function countDown( ){
+            var nowTime=+new Date();//当前毫秒数
+            var times=(inputTime-nowTime)/1000;
+            var h=parseInt(times/60/60%24);//hour
+            h=h<10?'0'+h:h;
+            hour.innerHTML=h;
+            var m=parseInt(times/60%60);//minute
+            m=m<10?'0'+m:m;
+            minute.innerHTML=m;
+            var s=parseInt(times%60);//second
+            s=s<10?'0'+s:s;
+            second.innerHTML=s;
+        }
+        
+    </script>
+</body>
+</html>
+```
