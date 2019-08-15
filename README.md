@@ -239,3 +239,12 @@
 | path | 路径  由零或多个'/'符号隔开的字符串,一般用来表示主机上的一个目录或文件地址|
 | query| 参数  以键值对的形式通过&符号分隔开来 | 
 | fragment| 片段  #后面内容 常见于链接锚点 |
+
+| location对象属性| 返回值| 
+| ------ | ------ |
+| location. href| 获取或者设置整个URL| 
+| location. host| 返回主机(域名)www.itheima.com| 
+| location. port| 返回端口号如果未写返回空字符串| 
+| location. pathname| 返回路径| 
+| location, search| 返回参数| 
+| location. hash| 返回片段#后面内容常见于链接锚点| 
