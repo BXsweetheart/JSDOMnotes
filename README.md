@@ -301,3 +301,38 @@
 | element.offsetLeft | 返回元素相对带有定位父元素左边框的偏移 | 
 | element.offsetwidth | 返回自身包括 padding、边框、内容区的宽度,返回数值不带单位 | 
 | element.offsetHeight | 返回自身包括 padding、边框、内容区的高度,返回数值不带单位 | 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 200px 150px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var box=document.querySelector('.box')
+        box.addEventListener('mousemove',function(e){
+            var x=e.pageX-this.offsetLeft
+            var y=e.pageY-this.offsetTop
+            this.innerHTML='x坐标是'+x+'y坐标是'+y;
+        })
+    </script>
+</body>
+</html>
+```
