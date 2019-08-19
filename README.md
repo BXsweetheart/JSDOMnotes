@@ -453,4 +453,9 @@
 </body>
 </html>
 ```
-
+| client系列属性| 作用| 
+| ------ | ------ |
+| element. client Top| 返回元素上边框的大小| 
+| element. clientLeft| 返回元素左边框的大小| 
+| element. clientWidth| 返回自身包括 padding、内容区的宽度,不含边框,返回数值不带单位| 
+| element clientHeight| 返回自身包括 padding、内容区的高度,不含边框,返回数值不带单位| 
