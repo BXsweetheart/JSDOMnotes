@@ -460,9 +460,15 @@
 | element. clientWidth| 返回自身包括 padding、内容区的宽度,不含边框,返回数值不带单位| 
 | element clientHeight| 返回自身包括 padding、内容区的高度,不含边框,返回数值不带单位| 
 
-| scrll系列属性| 作用| 
+| scroll系列属性| 作用| 
 | ------ | ------ |
 | element.scrollTop| 返回被卷去的上侧距离,返回数值不带单位| 
 | element.scrollLeft| 返回被卷去的左侧距离,返回数值不带单位| 
 | element.scrollwidth| 返回自身实际的宽度,不含边框,返回数值不带单位| 
 | element.scrollHeight| ]返回自身实际的高度,不含边框,返回数值不带单位| 
+
+| 三大系列大小对比| 作用| 
+| ------ | ------ |
+| element.offsetwidth| 返回自身包括padding、边框、内容区的宽度,返回数值不带单位| 
+| element.clientWidth| 返回自身包括padding、内容区的宽度,不含边框,返回数值不带单位| 
+| element.scrollWidth| 返回自身实际的宽度,不含边框,返回数值不带单位| 
