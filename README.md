@@ -336,3 +336,121 @@
 </body>
 </html>
 ```
+
+###放大镜
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .preview-img{
+            position: relative;
+            margin: 50px 50px;
+            width: 600px;
+            height: 400x;
+            border: 1px solid #333;
+        }  
+        .img{
+            margin: 50px 100px;
+        }
+        .mask{
+            display: none;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #FEDE4F;
+            opacity: .5;
+            cursor: move;
+        }
+        .big{
+            margin: 0;
+            padding: 0;
+            display: none;
+            position: absolute;
+            width: 800px;
+            height: 500px;
+            /* background-color: aqua; */
+            left: 610px;
+            top:0;
+            z-index: 999;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .big img{
+            position: absolute;
+            top:0px;
+            left:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-img">
+        <img class="img" src="picture/Riven.jpg" width="400px" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img src="picture/Riven.jpg" class="bigImg" alt="">
+        </div>
+    </div>
+    <script>
+        var preview_img=document.querySelector('.preview-img')
+        var mask=document.querySelector('.mask');
+        var big=document.querySelector('.big');
+
+        preview_img.addEventListener('mouseover',function(){
+            mask.style.display='block';
+            big.style.display='block';
+        });
+        preview_img.addEventListener('mouseout',function(){
+            mask.style.display='none';
+            big.style.display='none';
+        })
+        //2.鼠标移动的时候让黄色的盒子跟着鼠标走
+        preview_img.addEventListener('mousemove',function(e){
+            //（1）先计算出鼠标在盒子内的坐标
+           var x=e.pageX-this.offsetLeft
+           var y=e.pageY-this.offsetTop
+           
+           //（2）减去mask自身宽度（offsetWidth）以及自身高度（offsetHeight）的一半就是鼠标在盒子中间的left和top值了。
+            //（3）mask移动的距离
+            var maskX=x-mask.offsetWidth/2;
+            var maskY=y-mask.offsetHeight/2 ;
+            //（4）如果mask的坐标小于0，就让他停在0的位置；
+            var maskXMax=preview_img.offsetWidth-mask.offsetWidth;//遮挡层最大的横向移动距离
+            var maskYMax=preview_img.offsetHeight-mask.offsetHeight;//遮挡层最大的竖向移动距离
+            if(maskX <= 0){
+                maskX = 0;
+            }else if( maskX>=maskXMax){
+                maskX = maskXMax;
+            }
+            if(maskY<=0) {
+                maskY = 0;
+            }else if( maskY>=maskYMax){
+                maskY = maskYMax;
+            }
+           mask.style.left=maskX +'px';
+           mask.style.top=maskY +'px';
+           //大图片的移动距离=遮挡层移动距离*大图片最大移动距离/遮挡层的最大移动距离
+           var bigImg= document.querySelector('.bigImg');
+           var bigXMax=bigImg.offsetWidth-big.offsetWidth;
+           var bigYMax=bigImg.offsetHeight-big.offsetHeight;
+           var bigX=maskX*bigXMax/maskXMax;
+           var bigY=maskY*bigYMax/maskYMax;
+           bigImg.style.left=-bigX+'px'
+           bigImg.style.top=-bigY+'px'
+        })
+    </script>
+</body>
+</html>
+```
+
