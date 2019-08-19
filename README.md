@@ -472,3 +472,39 @@
 | element.offsetwidth| 返回自身包括padding、边框、内容区的宽度,返回数值不带单位| 
 | element.clientWidth| 返回自身包括padding、内容区的宽度,不含边框,返回数值不带单位| 
 | element.scrollWidth| 返回自身实际的宽度,不含边框,返回数值不带单位| 
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        position:absolute;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div=document.querySelector('div');
+        var timer=  setInterval(function(){
+            if(div.offsetLeft<=400){
+               div.style.left=div.offsetLeft + 1 +'px'
+            }else{
+                clearInterval(timer)
+            }
+
+        },100)
+    </script>
+</body>
+</html>
+    ```
