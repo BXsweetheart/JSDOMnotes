@@ -459,3 +459,10 @@
 | element. clientLeft| 返回元素左边框的大小| 
 | element. clientWidth| 返回自身包括 padding、内容区的宽度,不含边框,返回数值不带单位| 
 | element clientHeight| 返回自身包括 padding、内容区的高度,不含边框,返回数值不带单位| 
+
+| scrll系列属性| 作用| 
+| ------ | ------ |
+| element.scrollTop| 返回被卷去的上侧距离,返回数值不带单位| 
+| element.scrollLeft| 返回被卷去的左侧距离,返回数值不带单位| 
+| element.scrollwidth| 返回自身实际的宽度,不含边框,返回数值不带单位| 
+| element.scrollHeight| ]返回自身实际的高度,不含边框,返回数值不带单位| 
