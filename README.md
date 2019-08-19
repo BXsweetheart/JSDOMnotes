@@ -507,4 +507,23 @@
     </script>
 </body>
 </html>
-    ```
+```
+```HTML
+<div></div>
+<span></span>
+<script>
+    function animate(obj,target){
+       var timer=  setInterval(function(){
+          if(obj.offsetLeft<=target){
+               obj.style.left=obj.offsetLeft + 1 +'px'
+          }else{
+               clearInterval(timer)
+          }
+       },100)
+    }
+    var div=document.querySelector('div');
+    var span=document.querySelector('span');
+    animate(div,200);
+    animate(span,100)
+</script>
+```
