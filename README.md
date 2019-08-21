@@ -527,3 +527,14 @@
     animate(span,100)
 </script>
 ```
+|事件列表 |说明 | 
+| ------ | ------ |
+| touchstart | 手指触摸DOM元素事件 | 
+| touchmove | 手指在DOM元素身上移动事件 | 
+| touchend | 手指离开DOM元素事件| 
+
+| 触摸列表| 说明| 
+| ------ | ------ |
+| touches| 正在触摸屏幕的所有手指的一个列表| 
+| targetTouches| 正在触摸当前DOM元素上的手指的一个列表| 
+| changedTouches| 手指状态发生了改变的表,从无到有,从有到无变化| 
