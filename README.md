@@ -571,3 +571,14 @@
 | prevtAll([expr])| $(".last").prevtAll()| 查找当前元素之前所有的同辈元素| 
 | hasClass(class)| $('div').hasClass("protected")| 检查当前的元素是否含有某个特定的类,如果有,则返回true| 
 | eq(index)| $("1i").eq(2);| 相当于$("1i:eq(2)"),index从0开始| 
+```html
+$(function() {
+    // 1. 隐式迭代 给所有的按钮都绑定了点击事件
+    $("button").click(function() {
+        // 2. 当前的元素变化背景颜色
+        $(this).css("background", "pink");
+        // 3. 其余的兄弟去掉背景颜色 隐式迭代
+        $(this).siblings("button").css("background", "");
+    });
+})
+```
