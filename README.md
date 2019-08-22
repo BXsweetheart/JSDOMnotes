@@ -555,8 +555,19 @@
 
 | 语法| 用法| 描述| 
 | ------ | ------ | ------ |
-| :first | $(li: first") | 获取第一个i元素 | 
+| :first | $(li: first") | 获取第一个li元素 | 
 | :last | $(li: last) | 获取最后一个元素 | 
 | :eq(index) | $("li:eq(2)") | 获取到的元素中,选择索引号为2的元素,素引号 index从0开始。 | 
 | :odd | $("li: odd") | 获取到的  li元素中,选择索引号为奇数的元素 | 
 | even | $("li:even") | 获取到的  li元素中,选择索引号为偶数的元素 | 
+
+| 语法| 用法| 描述| 
+| ------ | ------ | ------ |
+| parent()| $("li").parent();| 查找父级| 
+| children(selector)| $("ul").children("li");| 相当于$("ul>1i"),最近一级(亲儿子)| 
+| find(selector)| $("u1").find("1i");| 相当于$("ul li"),后代选择器| 
+| siblings(selector) | $(" .first").siblings("li");| 查找兄弟节点,不包括自己本身| 
+| nextAll([expr])| $(".first").nextAll()| 找当前元素之后所有的同辈元素| 
+| prevtAll([expr])| $(".last").prevtAll()| 查找当前元素之前所有的同辈元素| 
+| hasClass(class)| $('div').hasClass("protected")| 检查当前的元素是否含有某个特定的类,如果有,则返回true| 
+| eq(index)| $("1i").eq(2);| 相当于$("1i:eq(2)"),index从0开始| 
