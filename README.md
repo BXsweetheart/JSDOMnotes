@@ -623,3 +623,9 @@
     </script>
 </body>
 ```
+| 语法| 用法| 
+| ------ | ------ |
+| width()/height() | 取得匹配元素宽度和高度值只算wdith/ height| 
+| innerWidth()/ innerHieght() | 取得匹配元素宽度和高度值包含 padding| 
+| outerWidth()/ outerHeight() | 取得匹配元素宽度和高度值包含 padding、 border| 
+| outer Width(true)/ outerHeight(true)| 取得匹配元素宽度和高度值包含 padding、 border、 margin| 
